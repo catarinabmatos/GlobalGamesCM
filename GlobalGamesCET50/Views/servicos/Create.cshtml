@@ -1,7 +1,7 @@
 ﻿@model GlobalGamesCET50.data.entities.servicos
 
 @{
-    ViewData["Title"] = "Servicos";
+    ViewData["Title"] = "Create";
 }
 
 <section id="main">
@@ -32,36 +32,35 @@
 
         </article>
 
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>Peça um orçamento</h3>
-                    <form asp-controller="servicos" asp-action="Create" class="orcamento">
-                        <div>
-                            <label asp-for="Nome"></label>
-                            <input asp-for="Nome" placeholder="Nome" />
-                            <span asp-validation-for="Nome"></span>
-                        </div>
-
-                        <div>
-                            <label asp-for="Email"></label>
-                            <input asp-for="Email" placeholder="Email" />
-                            <span asp-validation-for="Email"></span>
-                        </div>
-
-                        <div>
-                            <label asp-for="Mensagem"></label>
-                            <textarea asp-for="Mensagem" placeholder="Mensagem"></textarea>
-                            <span asp-validation-for="Mensagem"></span>
-                        </div>
-                        <button class="button_1" type="submit">Enviar</button>
-                        </form>
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Peça um orçamento</h3>
+                <form asp-controller="servicos" asp-action="Create" class="orcamento">
+                    <div>
+                        <label asp-for="Nome"></label>
+                        <input asp-for="Nome" placeholder="Nome" />
+                        <span asp-validation-for="Nome"></span>
                     </div>
-            </aside>
+
+                    <div>
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" placeholder="Email" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Mensagem"></label>
+                        <textarea asp-for="Mensagem" placeholder="Mensagem"></textarea>
+                        <span asp-validation-for="Mensagem"></span>
+                    </div>
+
+                    <button class="button_1" type="submit">Enviar</button>
+                </form>
+            </div>
+        </aside>
     </div>
 </section>
 
-@section Scripts{
-    <script type="text/javascript">
-        document.querySelector('#servicos').className = 'selecionado';
-    </script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
