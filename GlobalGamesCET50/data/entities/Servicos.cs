@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GlobalGamesCET50.data.entities
 {
-    public class servicos
+    public class Servicos
     {
 
         public int Id { get; set; }

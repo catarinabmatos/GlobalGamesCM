@@ -25,7 +25,12 @@ namespace GlobalGamesCET50.Controllers
             return View();
         }
 
-        
+        public IActionResult Inscricoes()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
