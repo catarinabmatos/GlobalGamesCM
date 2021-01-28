@@ -7,16 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GlobalGamesCET50.data;
 using GlobalGamesCET50.data.entities;
+using Microsoft.AspNetCore.Authorization;
+using GlobalGamesCET50.Helpers;
 
 namespace GlobalGamesCET50.Controllers
 {
+    [Authorize]
     public class InscricoesController : Controller
     {
         private readonly DataContext _context;
+        private readonly IInscricoesRepository inscricoesRepository;
+        private readonly IUserHelper userHelper;
 
-        public InscricoesController(DataContext context)
+        public InscricoesController(DataContext context, IInscricoesRepository inscricoesRepository, IUserHelper userHelper)
         {
             _context = context;
+            this.inscricoesRepository = inscricoesRepository;
+            this.userHelper = userHelper;
         }
 
         // GET: Inscricoes

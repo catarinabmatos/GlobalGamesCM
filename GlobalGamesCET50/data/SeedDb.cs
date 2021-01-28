@@ -25,19 +25,19 @@ namespace GlobalGamesCET50.data
         {
             await this.context.Database.EnsureCreatedAsync();
 
-            var user = await this.userHelper.GetUserByEmailAsync("diogo.machado18@gmail.com");
+            var user = await this.userHelper.GetUserByEmailAsync("alforrecasunite@gmail.com");
             if (user == null)
             {
                 user = new User
                 {
                     FirstName = "Catarina",
                     LastName = "Matos",
-                    Email = "catarina.alforreca@gmail.com",
-                    UserName = "catbm01",
-                    PhoneNumber = "926478534",
+                    Email = "alforrecasunite@gmail.com",
+                    UserName = "alforrecasunite@gmail.com",
+                    PhoneNumber = "912345678",
                 };
 
-                var result = await this.userHelper.AddUserAsync(user, "5050");
+                var result = await this.userHelper.AddUserAsync(user, "123456");
                 if (result != IdentityResult.Success)
                 {
                     throw new InvalidOperationException("Could not create the user in seeder");
@@ -48,11 +48,11 @@ namespace GlobalGamesCET50.data
 
             if (!this.context.Inscricoes.Any())
             {
-                this.AddInscricoes("Jorge Jesus", user); //mudar os nomes
+                this.AddInscricoes("Jorge Jesus", user);
                 this.AddInscricoes("Rosa Cruz", user);
                 this.AddInscricoes("Joana Silva", user);
                 this.AddInscricoes("Pedro Carneiro", user);
-                this.AddInscricoes("Rosália Esteves", user);
+                this.AddInscricoes("Rosalia Esteves", user);
                 await this.context.SaveChangesAsync();
             }
         }
