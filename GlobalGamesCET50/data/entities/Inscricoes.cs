@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GlobalGamesCET50.data.entities
 {
-    public class Inscricoes
+    public class Inscricoes : IEntity
     {
 
         public int Id { get; set; }
@@ -23,6 +23,11 @@ namespace GlobalGamesCET50.data.entities
 
         [Display(Name = "Data de Nascimento")]
         public DateTime DataNascimento { get; set; }
+
+        [Display(Name = "Imagem")]
+        public string ImageUrl { get; set; }
+
+        public User User { get; set; }
 
     }
 }

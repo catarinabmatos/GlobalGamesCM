@@ -1,4 +1,4 @@
-﻿@model GlobalGamesCET50.data.entities.Inscricoes
+﻿@model GlobalGamesCET50.Models.InscricoesUpViewModel
 @{
     ViewData["Title"] = "Inscricoes";
 }
@@ -38,6 +38,11 @@
                     <label asp-for="DataNascimento" class="control-label"></label>
                     <input asp-for="DataNascimento" class="form-control" />
                     <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageFile" class="control-label"></label>
+                    <input asp-for="ImageFile" class="form-control" type="file" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
                 </div>
                 <input id="botao" type="submit" value="Enviar" class="button_1" />
             </form>
